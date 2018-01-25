@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>太极的实现方式</title>
+    <style>
+body{background-color: grey}
+/*常规版，笨方法*/
+#taiji {
+    width: 0;
+    margin: auto;
+    height: 200px;
+    border-radius: 100%;
+    border-left:100px solid #ffffff;
+    border-right:100px solid #000000;
+    position: relative;
+}
+.yang{
+    width: 0;
+    height: 100px;
+    border-radius: 100%;
+    background:#000;
+    position: absolute;
+    left: -50px;
+    border-left: 50px solid white;
+    border-right: 50px solid white;
+
+}
+.yin{
+    width: 0;
+    height: 100px;
+    border-radius: 100%;
+    position: absolute;
+    left: -50px;
+    top: 100px;
+    border-left: 50px solid black;
+    border-right: 50px solid black;
+}
+.circle1{
+    position: absolute;
+    top: 135px;
+    left: -15px;
+    width: 30px;
+    height: 30px;
+    border-radius: 100%;
+    background-color: white;
+
+}
+.circle2{
+    position: absolute;
+    top: 35px;
+    left: -15px;
+    width: 30px;
+    height: 30px;
+    border-radius: 100%;
+    background-color: black;
+}
+
+/*CSS tricks版本*/
+#yin-yang {
+    width: 96px;
+    height: 48px;
+    background: #eee;
+    border-color: red;
+    border-style: solid;
+    border-width: 2px 2px 50px 2px;
+    border-radius: 100%;
+    position: relative;
+}
+
+#yin-yang:before {
+	content: "";
+	position: absolute;
+	top: 50%;
+	left: 0;
+	background: #eee;
+	border: 18px solid red;
+	border-radius: 100%;
+	width: 12px;
+	height: 12px;
+}
+
+#yin-yang:after {
+	content: "";
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	background: red;
+	border: 18px solid #eee;
+	border-radius:100%;
+	width: 12px;
+	height: 12px;
+}
+/*综合版*/
+#mytaiji{
+    position: relative;
+    width:0;
+    height: 200px;
+    border-radius: 100%;
+    border-left:100px solid #ffffff;
+    border-right:100px solid #000000;
+}
+#mytaiji:before{
+    background: #000000;
+    content: "";
+    position: absolute;
+    left: -50px;
+    width: 30px;
+    height: 30px;
+    border-radius: 100%;
+    border: 35px solid #ffffff;
+    top: 100px;
+}
+/*width+2*border==height/2 小圆的直径=大圆的半径*/
+#mytaiji:after{
+    left: -50px;
+    content: "";
+    position: absolute;
+    width: 30px;
+    height: 30px;
+    border-radius: 100%;
+    border: 35px solid #000000;
+    background: #ffffff;
+
+}
+    </style>
+</head>
+<body>
+    <h1>常规实现方法，比较笨拙</h1>
+    <div id="taiji">
+        <div class="yin"></div>
+        <div class="yang"></div>
+        <div class="circle1"></div>
+        <div class="circle2"></div>
+    </div>
+    <br>
+    <br>
+    <br>
+    <h1>CSS tricks实现方式</h1>
+    <div id="yin-yang"></div>
+    <br>
+    <br>
+    <br>
+    <h1>参考两种方式重新实现版本</h1>
+    <div id="mytaiji"></div>
+</body>
+</html>
