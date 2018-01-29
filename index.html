@@ -79,46 +79,58 @@
                 </a>
             </footer>
         </div>
-        <a href="#" class="button">下载PDF简历</a>
-        <p>陈明敏，前端工程师<br>技能：前端开发</p>
+        <div id="downLoadWrapper"><a href="./resume.pdf" class="button" download id="downLoadBtn">下载 PDF 简历</a></div>
+        <div id="selfIntroduction">陈明敏，前端工程师<br>技能：前端开发</div>
+        <section id="skillsWrapper">
+            <h2>技能</h2>
+            <ul class="clearfix">
+                <li>
+                    <div>HTML 5 &amp; CSS 3</div>
+                    <div class="progressBar"><div class="progress" style="width:60%;"></div></div>
+                </li>
+                <li>
+                    <div>JavaScript</div>
+                    <div class="progressBar"><div class="progress" style="width:45%;"></div></div>
+                </li>
+                <li>
+                    <div>NodeJs</div>
+                    <div class="progressBar"><div class="progress" style="width:35%;"></div></div>
+                </li>
+                <li>
+                    <div>jQuery</div>
+                    <div class="progressBar"><div class="progress" style="width:88%;"></div></div>
+                </li>
+                <li>
+                    <div>VueJS</div>
+                    <div class="progressBar"><div class="progress" style="width:90%;"></div></div>
+                </li>
+                <li>
+                    <div>ReactJs</div>
+                    <div class="progressBar"><div class="progress"></div></div>
+                </li>                   
+            </ul>
+        </section>
+        
+        <section id="portfolioWrapper">
+            <h2>作品集</h2>
+            <nav>
+                <ul class="clearfix">
+                    <li id="portfolio1">所有</li>
+                    <li id="portfolio2">框架</li>
+                    <li id="portfolio3">原生JS&amp;CSS</li>
+                </ul>
+                <div>
+                    <div class="state1" id="portfolioBar"></div>
+                </div>
+            </nav>
+            
+            <div class="works">
+                <div class="pic1_state1" id="worksPic1"><img src="./images/pic1.jpg"></div>
+                <div class="pic2_state1" id="worksPic3"><img src="./images/pic2.jpg"></div>
+                <div class="pic3_state1" id="worksPic2"><img src="./images/pic3.jpg"></div>
+            </div>
+        </section>
     </main>
-    <section>
-        <h2>技能</h2>
-        <ol>
-            <li>HTML 5 &amp; CSS 3</li>
-            <li>JavaScript</li>
-            <li>jQuery</li>
-            <li>Vue</li>
-            <li>React</li>
-            <li>HTTP</li>
-        </ol>
-    </section>
-    <section>
-        <h2>作品集</h2>
-        <nav>
-            <ol>
-                <li>所有</li>
-                <li>框架</li>
-                <li>原生JS&amp;CSS</li>
-            </ol>
-        </nav>
-        <div class="jobs">
-            <div class="big"></div>
-            <div class="small"></div>
-            <div class="small"></div>
-        </div>
-    </section>
-
-    <span>你好</span>
-    <span>明敏</span>
-    <span>他们</span>
-    <span>我们</span>
-    <span>hahahaaaaaaaaaaaaaaaahahhahahahahahahahahhahahahahah</span>
-    <div>你好</div>
-    <div>明敏</div>
-    <div>他们</div>
-    <div>我们</div>
-    <div>hahahaaaaaaaaaaaaaaaahahhahahahahahahahahhahahahahah</div>
-
+<script src="./js/main.js"></script>
 </body>
 </html> 

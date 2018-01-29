@@ -7,6 +7,7 @@
     <title>太极的实现方式</title>
     <style>
 body{background-color: grey}
+
 /*常规版，笨方法*/
 #taiji {
     width: 0;
@@ -125,9 +126,131 @@ body{background-color: grey}
     background: #ffffff;
 
 }
+/*太极实现方法一：*/
+body{
+  background:#444;
+}
+#yinyang{
+  width:200px;
+  height:200px;
+  border-radius:50%;
+  background: linear-gradient(to bottom,  #ffffff 0%,#ffffff 50%,#000000 50%,#000000 100%); 
+  position:relative;
+
+}
+
+#yinyang>.one{
+  width:100px;
+  height:100px;
+  border-radius:50%;
+  background:#000000;
+  position:absolute;
+  top:50px;
+  left:0;
+}
+#yinyang>.one>.circle{
+  width:20px;
+  height:20px;
+  border-radius:50%;
+  background:#ffffff;
+  position:absolute;
+  top:40px;
+  left:40px;
+}
+#yinyang>.two{
+  width:100px;
+  height:100px;
+  border-radius:50%;
+  background:#ffffff;
+  position:absolute;
+  top:50px;
+  right:0;
+}
+#yinyang>.two>.circle{
+  width:20px;
+  height:20px;
+  border-radius:50%;
+  background:#000000;
+  position:absolute;
+  top:40px;
+  left:40px;
+}
+
+/*太极实现方法二：*/
+body{
+  background:#444;
+}
+@keyframes spin{
+  from{
+    transform:rotate(0deg);
+  }
+  
+  to{
+    transform:rotate(360deg);
+  }
+  
+}
+#yinyang2{
+  width:200px;
+  height:200px;
+  border-radius:50%;
+  background: linear-gradient(to bottom,  #ffffff 0%,#ffffff 50%,#000000 50%,#000000 100%); 
+  position:relative;
+  animation-duration:5s;
+  animation-name:spin;
+  animation-iteration-count: infinite;
+  animation-timing-function: linear;
+
+}
+#yinyang2::before{
+  content:"";
+  display:block;
+  width:20px;
+  height:20px;
+  border-radius:50%;
+  background:#ffffff;
+  position:absolute;
+  top:50px;
+  left:0;
+  border:40px solid #000000;
+}
+#yinyang2::after{
+  content:"";
+  display:block;
+  width:20px;
+  height:20px;
+  border-radius:50%;
+  background:#000000;
+  position:absolute;
+  top:50px;
+  right:0;
+  border:40px solid #ffffff
+}
+
+
+
     </style>
 </head>
 <body>
+    <h1>太极实现方法一：</h1>
+    <div id="yinyang">
+    <div class="one">
+        <div class="circle"></div>
+        
+    </div>
+    <div class="two">
+        <div class="circle"></div>
+    </div>
+    </div>
+    <br>
+    <br>
+    <br>
+    <h2>太极实现方法二：</h2>
+    <div id="yinyang2">
+    </div>
+    <br>
+    <br>
+    <br>
     <h1>常规实现方法，比较笨拙</h1>
     <div id="taiji">
         <div class="yin"></div>
