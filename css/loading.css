@@ -16,6 +16,7 @@
     background:black;
     border-radius: 50%;
     animation: circle 1.5s linear infinite;
+  
   }
   .loading::after{
     animation-delay:0.75s;
