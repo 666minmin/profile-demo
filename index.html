@@ -44,13 +44,20 @@
         </a>
         <nav>
             <ul class="clearfix">
-                <li><a href="#">关于</a></li>
-                <li><a href="#">技能</a></li>
-                <li><a href="#">作品</a></li>
-                <li><a href="#">博客</a></li>
-                <li><a href="#">日历</a></li>
-                <li><a href="#">联系方式</a></li>
-                <li><a href="#">其他</a></li>
+                <li  class="menuTigger"><a href="#aboutWrapper">关于</a></li>
+                <li  class="menuTigger"><a href="#skillsWrapper">技能</a></li>
+                <li  class="menuTigger">
+                    <a href="#portfolioWrapper">作品</a>
+                    <ul class="submenu">
+                        <li>作品1</li>
+                        <li>作品2</li>
+                        <li>作品3</li>
+                    </ul>
+                </li>
+                <li  class="menuTigger"><a href="#">博客</a></li>
+                <li  class="menuTigger"><a href="#">日历</a></li>
+                <li  class="menuTigger"><a href="#">联系方式</a></li>
+                <li  class="menuTigger"><a href="#">其他</a></li>
             </ul>
         </nav>
     </div>
@@ -58,7 +65,7 @@
         <div class="mask"></div>
     </div>
     <main>
-        <div class="userCard">
+        <div id="aboutWrapper" class="userCard">
             <div class="pictureAndProfile clearfix">
                 <div class="picture">
                     <img src="./images/portrait.jpg" width=299 height=347 alt="头像">
@@ -155,9 +162,9 @@
 <script src="./js/main.js"></script>
 <script>
     
-    // setTimeout(function(){
+     setTimeout(function(){
         siteWelcome.classList.remove("active");
-    // },3000);
+     },3000);
 
     window.onscroll=function(){
      if(window.scrollY>0){
@@ -166,6 +173,27 @@
          topNavBar.classList.remove("sticky");
      }
     };
+   var tags=document.getElementsByClassName("menuTigger");
+   for(var i=0;i<tags.length;i++){
+       tags[i].onmouseenter=function(e){
+           e.currentTarget.classList.add("active");
+       }
+       tags[i].onmouseleave=function(e){
+           e.currentTarget.classList.remove("active");
+
+       }
+   }
+   var aTags=document.querySelectorAll(".topNavBar>nav>ul>li>a");
+   for(var i=0;i<aTags.length;i++){
+      aTags[i].onclick=function(e){
+          e.preventDefault();
+          var href=e.currentTarget.getAttribute("href");
+          var element=document.querySelector(href);
+          var top=element.offsetTop;
+          window.scrollTo(0,top-80);
+         
+      };
+   }
 </script>
 </body>
 </html> 
