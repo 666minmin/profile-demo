@@ -13,6 +13,21 @@ body{
     display: block;
     clear: both;
 }
+[data-x].offset{
+    transform: translateY(100px);
+}
+[data-x]{
+    transform: translateY(0);
+    transition: all 0.5s;
+}
+@keyframes slideUp{
+    0%{
+        transform: translateY(-30px);
+    }
+    100%{
+        transform: translateY(0);
+    }
+}
 .topNavBar{
     position: fixed;
     top: 0;
@@ -68,7 +83,8 @@ body{
     margin-right: 17px;
     position: relative;
 }
-.topNavBar>nav>ul>li.active>a::after{
+.topNavBar>nav>ul>li.active>a::after,
+.topNavBar>nav>ul>li.highlight>a::after{
     content: "";
     display: block;
     position: absolute;
@@ -270,14 +286,21 @@ main{
     float: left;
     list-style-type: none;
 }
+#skillsWrapper.offset .progress{
+    transform: translateX(-100%);
+
+}
 #skillsWrapper .progressBar{
     height: 5px;
     background: #FAE1E1;
     border-radius: 2px;
     margin: 4px 0 40px;
+    overflow: hidden;
 
 }
 #skillsWrapper .progress{
+    transform: translateX(0);
+    transition: all 0.5s;
     height: 100%;
     background: #E6686A;
     width: 70%;
